@@ -1790,11 +1790,11 @@
   <version>1.1.1</version>
   <executions>
     <execution>
-<!--       <id>build-image</id>
+      <id>build-image</id>
       <phase>package</phase>
       <goals>
         <goal>build</goal>
-      </goals> -->
+      </goals>
 	    <configuration>
 	<imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
         <baseImage>java</baseImage>
