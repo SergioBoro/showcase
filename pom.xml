@@ -1800,14 +1800,14 @@
         <baseImage>java</baseImage>
         <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
         <!-- copy the service's jar file from target into the root directory of the image --> 
-        <resources>
+        <dockerDirectory>assembly</dockerDirectory>
+	<resources>
            <resource>
              <targetPath>/</targetPath>
              <directory>${project.build.directory}</directory>
              <include>${project.build.finalName}.war</include>
            </resource>
         </resources>
-	<dockerDirectory>docker</dockerDirectory>
 	<registryUrl>https://hub.docker.com/r/</registryUrl>
       </configuration>
      </execution>
