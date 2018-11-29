@@ -1796,7 +1796,7 @@
         <goal>build</goal>
       </goals>
 	    <configuration>
-	<imageName>sergioboroid/docker-test:${project.version}</imageName>
+	<imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
         <baseImage>java</baseImage>
         <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
         <!-- copy the service's jar file from target into the root directory of the image --> 
@@ -1809,7 +1809,7 @@
         </resources>
       </configuration>
      </execution>
-<!--    <execution>
+    <execution>
       <id>tag-image</id>
       <phase>package</phase>
       <goals>
@@ -1829,7 +1829,7 @@
       <configuration>
         <imageName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</imageName>
       </configuration>
-    </execution>         -->
+    </execution>         
   </executions>
 </plugin>
 	    
