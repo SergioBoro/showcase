@@ -1795,6 +1795,18 @@
       <goals>
         <goal>build</goal>
       </goals>
+	    <configuration>
+        <baseImage>java</baseImage>
+        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
+        <!-- copy the service's jar file from target into the root directory of the image --> 
+        <resources>
+           <resource>
+             <targetPath>/</targetPath>
+             <directory>${project.build.directory}</directory>
+             <include>${project.build.finalName}.war</include>
+           </resource>
+        </resources>
+      </configuration>
     </execution>
     <execution>
       <id>tag-image</id>
@@ -1805,6 +1817,16 @@
       <configuration>
         <image>sergioboroid/docker-test:${project.version}</image>
         <newName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</newName>
+	      <baseImage>java</baseImage>
+        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
+        <!-- copy the service's jar file from target into the root directory of the image --> 
+        <resources>
+           <resource>
+             <targetPath>/</targetPath>
+             <directory>${project.build.directory}</directory>
+             <include>${project.build.finalName}.war</include>
+           </resource>
+        </resources>
       </configuration>
     </execution>
     <execution>
