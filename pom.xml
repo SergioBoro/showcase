@@ -1808,8 +1808,8 @@
            </resource>
         </resources>
       </configuration>
-<!--     </execution>
-    <execution>
+     </execution>
+<!--    <execution>
       <id>tag-image</id>
       <phase>package</phase>
       <goals>
