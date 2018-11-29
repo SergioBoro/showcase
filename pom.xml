@@ -1807,6 +1807,7 @@
              <include>${project.build.finalName}.war</include>
            </resource>
         </resources>
+	<dockerDirectory>docker</dockerDirectory>
 	<registryUrl>https://hub.docker.com/r/</registryUrl>
       </configuration>
      </execution>
