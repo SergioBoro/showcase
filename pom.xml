@@ -1796,7 +1796,7 @@
         <goal>build</goal>
       </goals>
 	    <configuration>
-	<imageName>sergioboroid/docker-test:${project.version}</imageName>
+	<imageName>sergioboroid/docker-test</imageName>
         <baseImage>java</baseImage>
         <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
         <!-- copy the service's jar file from target into the root directory of the image --> 
