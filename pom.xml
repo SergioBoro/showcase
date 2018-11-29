@@ -1783,6 +1783,58 @@
           <copyWebapp>true</copyWebapp>
         </configuration>
       </plugin>
+	    
+	       <plugin>
+  <groupId>com.spotify</groupId>
+  <artifactId>docker-maven-plugin</artifactId>
+  <version>1.1.1</version>
+  <executions>
+    <execution>
+      <id>build-image</id>
+      <phase>package</phase>
+      <goals>
+        <goal>build</goal>
+      </goals>
+	    <configuration>
+	<imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
+        <baseImage>java</baseImage>
+        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
+        <!-- copy the service's jar file from target into the root directory of the image --> 
+        <dockerDirectory>assembly</dockerDirectory>
+	<resources>
+           <resource>
+             <targetPath>/</targetPath>
+             <directory>${project.build.directory}</directory>
+             <include>${project.build.finalName}.war</include>
+           </resource>
+        </resources>
+	<registryUrl>https://hub.docker.com/r/</registryUrl>
+      </configuration>
+     </execution>
+<!--     <execution>
+      <id>tag-image</id>
+      <phase>package</phase>
+      <goals>
+        <goal>tag</goal>
+      </goals>
+      <configuration>
+        <image>sergioboroid/docker-test:${project.version}</image>
+        <newName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</newName>
+	</configuration>
+    </execution>
+    <execution>
+      <id>push-image</id>
+      <phase>deploy</phase>
+      <goals>
+        <goal>push</goal>
+      </goals>
+      <configuration>
+        <imageName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</imageName>
+      </configuration>
+    </execution>          -->
+  </executions>
+</plugin>
+	    
 	    <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>javacc-maven-plugin</artifactId>
