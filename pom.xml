@@ -1790,11 +1790,11 @@
   <version>1.1.1</version>
   <executions>
     <execution>
-      <id>build-image</id>
+<!--       <id>build-image</id>
       <phase>package</phase>
       <goals>
         <goal>build</goal>
-      </goals>
+      </goals> -->
 	    <configuration>
 	<imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
         <baseImage>java</baseImage>
@@ -1809,7 +1809,7 @@
         </resources>
       </configuration>
      </execution>
-    <execution>
+<!--     <execution>
       <id>tag-image</id>
       <phase>package</phase>
       <goals>
@@ -1829,7 +1829,7 @@
       <configuration>
         <imageName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</imageName>
       </configuration>
-    </execution>         
+    </execution>          -->
   </executions>
 </plugin>
 	    
