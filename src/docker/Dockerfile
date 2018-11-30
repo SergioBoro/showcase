@@ -1,6 +1,6 @@
 FROM tomcat:latest
 # TODO environment
-ARG SHOWCASE_MAJOR=6.1
+ARG SHOWCASE_MAJOR=6.1-SNAPSHOT
 #ARG SHOWCASE_VERSION=102
 
 RUN rm -rf webapps/ROOT && rm -rf webapps/manager && rm -rf webapps/docs && rm -rf webapps/examples && rm -rf webapps/host-manager
