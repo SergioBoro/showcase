@@ -1800,7 +1800,7 @@
         </configuration>
       </plugin>
 	    
-	       <plugin>
+<!-- 	       <plugin>
   <groupId>com.spotify</groupId>
   <artifactId>docker-maven-plugin</artifactId>
   <version>1.1.1</version>
@@ -1813,9 +1813,6 @@
       </goals>
 	    <configuration>
 	<imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
-<!--         <baseImage>java</baseImage>
-        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint> -->
-        <!-- copy the service's jar file from target into the root directory of the image --> 
          <dockerDirectory>src/docker</dockerDirectory>
 	<resources>
            <resource>
@@ -1824,10 +1821,9 @@
              <include>${project.build.finalName}.war</include>
            </resource>
         </resources>
-<!-- 	<registryUrl>https://hub.docker.com/r/</registryUrl> -->
       </configuration>
      </execution>
-<!--     <execution>
+    <execution>
       <id>tag-image</id>
       <phase>install</phase>
       <goals>
@@ -1837,7 +1833,7 @@
         <image>sergioboroid/docker-test:${project.version}-${build.number}</image>
         <newName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</newName>
 	</configuration>
-    </execution> -->
+    </execution>
     <execution>
       <id>push-image</id>
       <phase>package</phase>
@@ -1849,7 +1845,7 @@
       </configuration>
     </execution>         
   </executions>
-</plugin>
+</plugin> -->
 	    
 	    <plugin>
                         <groupId>org.codehaus.mojo</groupId>
