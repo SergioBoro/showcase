@@ -8,6 +8,6 @@ RUN rm -rf webapps/ROOT && rm -rf webapps/manager && rm -rf webapps/docs && rm -
 # SHOWCASE
 #ADD http://artifactory.corchestra.ru/artifactory/corchestra-dev/${SHOWCASE_VERSION}/showcase-${SHOWCASE_MAJOR}-SNAPSHOT.war webapps/showcase.war
 #ADD http://jenkins.curs.ru:1111/job/Showcase/1859/artifact/build/artifacts/Showcase-${SHOWCASE_VERSION}.war webapps/showcase.war
-ADD https://artifactory.corchestra.ru/artifactory/libs-snapshot-local/ru/curs/showcase/${project.version}/showcase-${project.version}.war webapps/showcase.war
+ADD https://artifactory.corchestra.ru/artifactory/libs-snapshot-local/ru/curs/showcase/${SHOWCASE_MAJOR}/showcase-${SHOWCASE_MAJOR}.war webapps/showcase.war
 
 RUN unzip webapps/showcase.war -d webapps/showcase && rm webapps/showcase.war
