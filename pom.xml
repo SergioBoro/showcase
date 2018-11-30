@@ -1587,7 +1587,23 @@
         <exclude>**/buildNumber.txt</exclude>
       </excludes>
     </resource>
-	  
+
+	    <resource>
+      <directory>src/docker</directory>
+      <filtering>true</filtering>
+      <includes>
+        <include>**/Dockerfile</include>
+      </includes>
+    </resource>
+    <resource>
+      <directory>src/docker</directory>
+      <filtering>false</filtering>
+      <excludes>
+        <exclude>**/Dockerfile</exclude>
+      </excludes>
+    </resource>
+
+	    
 	<resource>
         <directory>src/main/java</directory>
         <includes>
