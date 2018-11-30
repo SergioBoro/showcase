@@ -1807,16 +1807,16 @@
   <executions>
     <execution>
       <id>build-image</id>
-      <phase>package</phase>
+      <phase>deploy</phase>
       <goals>
         <goal>build</goal>
       </goals>
 	    <configuration>
 	<imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
-        <baseImage>java</baseImage>
-        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
+<!--         <baseImage>java</baseImage>
+        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint> -->
         <!-- copy the service's jar file from target into the root directory of the image --> 
-<!--         <dockerDirectory>src/docker</dockerDirectory> -->
+         <dockerDirectory>src/docker</dockerDirectory>
 	<resources>
            <resource>
              <targetPath>/</targetPath>
@@ -1827,7 +1827,7 @@
 <!-- 	<registryUrl>https://hub.docker.com/r/</registryUrl> -->
       </configuration>
      </execution>
-    <execution>
+<!--     <execution>
       <id>tag-image</id>
       <phase>install</phase>
       <goals>
@@ -1837,7 +1837,7 @@
         <image>sergioboroid/docker-test:${project.version}-${build.number}</image>
         <newName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}</newName>
 	</configuration>
-    </execution>
+    </execution> -->
     <execution>
       <id>push-image</id>
       <phase>deploy</phase>
