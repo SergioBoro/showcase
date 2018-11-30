@@ -17,7 +17,7 @@ node {
 
     try{
         stage ('Exec Maven') {
-            rtMaven.run pom: 'pom.xml', goals: 'clean -Dbuild.number=${BUILD_NUMBER} package docker:build -DpushImage', buildInfo: buildInfo
+            rtMaven.run pom: 'pom.xml', goals: 'clean -Dbuild.number=${BUILD_NUMBER} package docker:deploy', buildInfo: buildInfo
         }
     } finally {
         //junit '**/surefire-reports/**/*.xml'
