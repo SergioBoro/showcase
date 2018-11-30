@@ -2,7 +2,10 @@ node {
     def server = Artifactory.server 'ART'
     def rtMaven = Artifactory.newMavenBuild()
     def buildInfo
-
+    def registry = "sergioboroid/docker-test"
+    def registryCredential = "dockerhub"
+    def pcImg
+    
     stage ('Clone') {
         checkout scm
     }
@@ -28,4 +31,18 @@ node {
       //  server.publishBuildInfo buildInfo
     //}
     //}
+    
+    //stage('Cloning Git') {
+      //  git 'https://github.com/SergioBoro/showcase.git'
+    //}
+  
+     stage('Building image') {
+         pcImg = docker.build(registry + ":6.1-SNAPSHOT-$BUILD_NUMBER", '.')
+   }
+  
+  stage('Deploy Image') {
+          docker.withRegistry("https://registry.hub.docker.com/", registryCredential) {
+             pcImg.push()
+      }
+    }
 }
