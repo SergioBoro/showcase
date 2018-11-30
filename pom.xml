@@ -1845,7 +1845,7 @@
         <goal>push</goal>
       </goals>
       <configuration>
-        <imageName>registry.hub.docker.com/sergioboroid/docker-test:${project.version}-${build.number}</imageName>
+        <imageName>sergioboroid/docker-test:${project.version}-${build.number}</imageName>
       </configuration>
     </execution>         
   </executions>
