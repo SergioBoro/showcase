@@ -37,7 +37,7 @@ node {
     //}
   
      stage('Building image') {
-         pcImg = docker.build(registry + ":6.1-SNAPSHOT-$BUILD_NUMBER", '.')
+         pcImg = docker.build(registry + ":showcase-6.1-SNAPSHOT-$BUILD_NUMBER", '.')
    }
   
   stage('Deploy Image') {
